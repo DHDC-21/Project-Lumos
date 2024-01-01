@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2023-12-31T23:19:40.890Z" agent="Mozilla/5.0 (X11; CrOS x86_64 14541.0.0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36" etag="CqvDscGdBJj9qKBeOieY" version="22.1.16" type="github" pages="2">
+<mxfile host="app.diagrams.net" modified="2024-01-01T04:28:28.407Z" agent="Mozilla/5.0 (X11; CrOS x86_64 14541.0.0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36" etag="wEi7e5YZ9FPE66o69Os-" version="22.1.16" type="github" pages="3">
   <diagram id="prtHgNgQTEPvFCAcTncT" name="EAP">
     <mxGraphModel dx="1434" dy="761" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="0" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -199,6 +199,14 @@
         <mxCell id="bOTV_yAUtHdcRotCGwAr-26" value="" style="shadow=0;dashed=0;html=1;strokeColor=#FFFFFF;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;shape=mxgraph.office.users.user;fillColor=#2F5B7C;labelBackgroundColor=none;fontSize=10;fontColor=#000000;align=left;strokeWidth=1;container=0;fontFamily=Helvetica;" vertex="1" parent="1">
           <mxGeometry x="1084.9800000000002" y="109.29912390488107" width="23.92" height="25.657071339173967" as="geometry" />
         </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="QSi3XI_juUMkF02PZ6hX" name="Casos de Uso">
+    <mxGraphModel dx="1434" dy="761" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
       </root>
     </mxGraphModel>
   </diagram>
