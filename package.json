@@ -1,0 +1,44 @@
+{
+  "name": "projeto-lumos",
+  "version": "1.0.0",
+  "description": "Estudo de caso para o desenvolvimento de um mensageiro",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "test": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dhdc-21/projeto-lumos.git"
+  },
+  "keywords": [
+    "Estudo de Caso",
+    "Mensageiro",
+    "Projeto Lumos",
+    "Node.JS",
+    "HTML",
+    "HTML5",
+    "CSS",
+    "JavaScript",
+    "Bootstrap",
+    "Express",
+    "Sequelize",
+    "MariaDB",
+    "JWT",
+    "Bcrypt",
+    "Socket.io"
+  ],
+  "author": "DHDC-21",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dhdc-21/projeto-lumos/issues"
+  },
+  "homepage": "https://github.com/dhdc-21/projeto-lumos#readme",
+  "dependencies": {
+    "bootstrap": "^5.2.3",
+    "express": "^4.18.2"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.2"
+  }
+}
