@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <title> <%- titulo %> </title>
+</head>
+<body>
+
+    <div
+        class="container"
+        >
+        <h1>Novo usuário:</h1>
+        <hr>
+
+        <form action="" method="post">
+
+            <div
+                class="row justify-content-center align-items-center g-2"
+            >
+                <div class="col">
+                    <div class="form-floating mb-3">
+                        <input
+                            type="text"
+                            class="form-control"
+                            name="inputNome"
+                            id="inputNome"
+                            placeholder=""
+                        />
+                        <label for="inputNome">Nome:*</label>
+                    </div>
+                    
+                </div>
+                <div class="col">
+                    <div class="form-floating mb-3">
+                        <input
+                            type="text"
+                            class="form-control"
+                            name="inputSobrenome"
+                            id="inputSobrenome"
+                            placeholder=""
+                        />
+                        <label for="inputSobrenome">Sobrenome:</label>
+                    </div>
+                </div>
+            </div>
+            
+            
+            <div class="mb-3 form-floating">
+                <input
+                type="email"
+                class="form-control"
+                name="inpuEmail"
+                id="inputEmail"
+                placeholder="exemplo@email.com"
+                />
+                <label for="inputEmail" class="form-label">E-mail:*</label>
+            </div>
+            
+            <div class="mb-3 form-floating">
+                <input
+                type="password"
+                class="form-control"
+                name="inputSenha"
+                id="inputSenha"
+                placeholder="********"
+                min="8"
+                max="24"
+                aria-describedby="descricaoSenha"
+                />
+                <label for="inputSenha" class="form-label">Senha*</label>
+                <small class="text-muted" id="descricaoSenha"> Crie uma senha forte com 8 a 24 caracterers, incluindo maisúsculas e minúsculas (A-z), números (0-9) e caracteres especiais. </small>
+            </div>
+            
+            <div class="mb-3 form-floating">
+                <input
+                type="password"
+                class="form-control"
+                name="repetirSenha"
+                id="repetirSenha"
+                placeholder="********"
+                min="8"
+                max="24"
+                aria-describedby="descricaoSenha"
+                />
+                <label for="repetirSenha" class="form-label">Confirmar senha:*</label>
+                <p class="form-text text-muted">Repita a senha criada no campo anterior.</p>
+            </div>
+            
+            <div class="form-floating mb-3">
+                <input
+                    type="tel"
+                    class="form-control"
+                    name="inputTelefone"
+                    id="inputTelefone"
+                    placeholder="(XXX) 9 XXXX-XXXX"
+                />
+                <label for="formId1">Telefone:</label>
+            </div>
+
+            <div class="mb-3">
+                <label for="" class="form-label">Foto de perfil:</label>
+                <input
+                    type="file"
+                    class="form-control"
+                    name="inputFoto"
+                    id="inputFoto"
+                    placeholder=""
+                    aria-describedby="descricaoFoto"
+                />
+                <div id="descricaoFoto" class="form-text">Suba apenas arquivos de imagem png ou jpg.</div>
+            </div>
+
+            <div class="mb-3">
+                <label for="inputStatus" class="form-label">Mensagem de status:</label>
+                <textarea class="form-control" name="inputStatus" id="inputStatus" rows="3" maxlength="255"></textarea>
+            </div>
+            
+            
+            
+
+        </form>
+
+    </div>
+    
+</body>
+</html>
