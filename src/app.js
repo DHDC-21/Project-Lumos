@@ -23,6 +23,9 @@ app.use(express.urlencoded({extended:true}));
 const rotaDeLogin = require('./routes/login.routes.js')
 const rotaDeCadastro = require('./routes/cadastro.routes.js')
 
+app.get('/',(req,res)=>{
+    res.redirect('/sign-in')
+})
 app.use('/sign-in', rotaDeLogin);
 app.use('/sign-up', rotaDeCadastro);
 

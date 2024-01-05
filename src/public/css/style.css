@@ -1,0 +1,30 @@
+html{
+    background-color: rgb(34, 34, 34);
+}
+
+body{
+    width: 100%;
+    max-width: 360px;
+    height: 100%;
+    max-width: 640px;
+    margin: auto;
+    background-color: #ffffff;
+}
+
+.container{
+    padding-top: 5%;
+    padding-bottom: 5%;
+    border-radius: 2%;
+}
+
+h1, h2{
+    text-align: center;
+}
+
+hr{
+    margin: 5%;
+}
+
+#campo-obrigatorio{
+    color: red;
+}

@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/style.css">
     <title> <%- titulo %> </title>
 </head>
 <body>
@@ -28,7 +29,7 @@
                             id="inputNome"
                             placeholder=""
                         />
-                        <label for="inputNome">Nome:*</label>
+                        <label for="inputNome">Nome: <span id="campo-obrigatorio">*</span> </label>
                     </div>
                     
                 </div>
@@ -55,7 +56,7 @@
                 id="inputEmail"
                 placeholder="exemplo@email.com"
                 />
-                <label for="inputEmail" class="form-label">E-mail:*</label>
+                <label for="inputEmail" class="form-label">E-mail: <span id="campo-obrigatorio">*</span> </label>
             </div>
             
             <div class="mb-3 form-floating">
@@ -69,7 +70,7 @@
                 max="24"
                 aria-describedby="descricaoSenha"
                 />
-                <label for="inputSenha" class="form-label">Senha*</label>
+                <label for="inputSenha" class="form-label">Senha: <span id="campo-obrigatorio">*</span> </label>
                 <small class="text-muted" id="descricaoSenha"> Crie uma senha forte com 8 a 24 caracterers, incluindo maisúsculas e minúsculas (A-z), números (0-9) e caracteres especiais. </small>
             </div>
             
@@ -84,7 +85,7 @@
                 max="24"
                 aria-describedby="descricaoSenha"
                 />
-                <label for="repetirSenha" class="form-label">Confirmar senha:*</label>
+                <label for="repetirSenha" class="form-label">Confirmar senha: <span id="campo-obrigatorio">*</span> </label>
                 <p class="form-text text-muted">Repita a senha criada no campo anterior.</p>
             </div>
             
@@ -117,11 +118,30 @@
                 <textarea class="form-control" name="inputStatus" id="inputStatus" rows="3" maxlength="255"></textarea>
             </div>
             
+            <br>
+            <div class="mb-3 form-check">
+                <input class="form-check-input" type="checkbox" value="" id="" />
+                <label class="form-check-label" for=""> Aceito as <a href="">diretrizes da comunidade</a>. <span id="campo-obrigatorio">* campos obrigatórios</span> </label>
+            </div>
+            <br>
             
+            <div class="mb-3 d-grid gap-2">
+                <button
+                    type="submit"
+                    class="btn btn-primary btn-lg"
+                >
+                    Cadastrar
+                </button>
+            </div>
             
-
         </form>
 
+        <br>
+        <div class="mb-3">
+            <a href="/sign-in">
+                Voltar
+            </a>
+        </div>
     </div>
     
 </body>

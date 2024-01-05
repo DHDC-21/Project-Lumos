@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/style.css">
     <title><%- titulo %></title>
 </head>
 <body>
@@ -12,10 +13,10 @@
     >
         <h1>PROJETO LUMOS</h1>
         <h2>LOGIN:</h2>
-        <form action="post">
+        <hr>
+        <form action="/home" method="post">
 
-            <div class="mb-3">
-                <label for="inputEmail" class="form-label">E-mail:</label>
+            <div class="mb-3 form-floating">
                 <input
                     type="email"
                     class="form-control"
@@ -23,10 +24,10 @@
                     id="inputEmail"
                     placeholder="exemplo@email.com"
                 />
+                <label for="inputEmail" class="form-label">E-mail:</label>
             </div>
 
-            <div class="mb-3">
-                <label for="inputSenha" class="form-label">Senha:</label>
+            <div class="mb-3 form-floating">
                 <input
                     type="password"
                     class="form-control"
@@ -34,7 +35,8 @@
                     id="inputSenha"
                     placeholder="********"
                 />
-            </div>
+                <label for="inputSenha" class="form-label">Senha:</label>
+                </div>
 
             <div class="mb-3 form-check">
                 <input class="form-check-input" type="checkbox" value="" id="rememberMe" name="rememberMe" />
