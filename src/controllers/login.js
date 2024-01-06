@@ -1,6 +1,13 @@
 
+const global = require('../config/global');
+
+
 function telaDeLogin(req,res){
-    res.render('login.ejs',{titulo:'Sign-in',msg:''});
+    res.render(global.VIEW.SIGN_IN,{
+        title: global.ROUTE_TITLE.SIGN_IN,
+        msg: '',
+        global,
+    });
 }
 
 async function autenticarLogin(req,res){

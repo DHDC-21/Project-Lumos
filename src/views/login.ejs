@@ -5,16 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/css/bootstrap.min.css">
     <link rel="stylesheet" href="/css/style.css">
-    <title><%- titulo %></title>
+    <title><%- title %></title>
 </head>
 <body>
     <div
         class="container"
     >
         <h1>PROJETO LUMOS</h1>
-        <h2>LOGIN:</h2>
         <hr>
-        <form action="/home" method="post">
+        <form action="<%= global.ROUTE.SIGN_UP %>" method="post">
 
             <div class="mb-3 form-floating">
                 <input
@@ -54,11 +53,11 @@
             
             
             <p class="mb-3">
-                Esqueceu a senha? <a href="/forget"> Clique aqui para redefinir sua senha.</a>
+                Esqueceu a senha? <a href="<%= global.ROUTE.FORGET %>"> Clique aqui para redefinir sua senha.</a>
             </p>
 
             <p class="mb-3">
-                Ainda não tem uma conta? <a href="/sign-up"> Registre-se aqui.</a>
+                Ainda não tem uma conta? <a href="<%= global.ROUTE.SIGN_UP %>"> Registre-se aqui.</a>
             </p>
         </form>
         

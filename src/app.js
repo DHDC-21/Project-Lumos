@@ -20,14 +20,18 @@ app.use(morgan('dev'));
 app.use(express.urlencoded({extended:true}));
 
 
-const rotaDeLogin = require('./routes/login.routes.js')
-const rotaDeCadastro = require('./routes/cadastro.routes.js')
+const noUser = require('./routes/noUser.routes.js');
+const rotaDeLogin = require('./routes/login.routes.js');
+const rotaDeCadastro = require('./routes/cadastro.routes.js');
 
-app.get('/',(req,res)=>{
-    res.redirect('/sign-in')
-})
-app.use('/sign-in', rotaDeLogin);
-app.use('/sign-up', rotaDeCadastro);
+const checkAuthCookie = require('./middlewares/checkAuthCookie.js');
+
+const global = require('./config/global.js');
+
+app.use(noUser);
+app.use(global.ROUTE.SIGN_IN, rotaDeLogin);
+app.use(global.ROUTE.SIGN_UP, rotaDeCadastro);
+app.use(checkAuthCookie);
 
 
 module.exports = app;

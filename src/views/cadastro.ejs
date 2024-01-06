@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/css/bootstrap.min.css">
     <link rel="stylesheet" href="/css/style.css">
-    <title> <%- titulo %> </title>
+    <title> <%- title %> </title>
 </head>
 <body>
 
@@ -15,7 +15,7 @@
         <h1>Novo usuário:</h1>
         <hr>
 
-        <form action="" method="post">
+        <form action="<%= global.ROUTE.SIGN_UP %>" method="post">
 
             <div
                 class="row justify-content-center align-items-center g-2"
@@ -28,6 +28,7 @@
                             name="inputNome"
                             id="inputNome"
                             placeholder=""
+                            required
                         />
                         <label for="inputNome">Nome: <span id="campo-obrigatorio">*</span> </label>
                     </div>
@@ -52,9 +53,10 @@
                 <input
                 type="email"
                 class="form-control"
-                name="inpuEmail"
+                name="inputEmail"
                 id="inputEmail"
                 placeholder="exemplo@email.com"
+                required
                 />
                 <label for="inputEmail" class="form-label">E-mail: <span id="campo-obrigatorio">*</span> </label>
             </div>
@@ -69,6 +71,7 @@
                 min="8"
                 max="24"
                 aria-describedby="descricaoSenha"
+                required
                 />
                 <label for="inputSenha" class="form-label">Senha: <span id="campo-obrigatorio">*</span> </label>
                 <small class="text-muted" id="descricaoSenha"> Crie uma senha forte com 8 a 24 caracterers, incluindo maisúsculas e minúsculas (A-z), números (0-9) e caracteres especiais. </small>
@@ -84,6 +87,7 @@
                 min="8"
                 max="24"
                 aria-describedby="descricaoSenha"
+                required
                 />
                 <label for="repetirSenha" class="form-label">Confirmar senha: <span id="campo-obrigatorio">*</span> </label>
                 <p class="form-text text-muted">Repita a senha criada no campo anterior.</p>
@@ -120,11 +124,22 @@
             
             <br>
             <div class="mb-3 form-check">
-                <input class="form-check-input" type="checkbox" value="" id="" />
-                <label class="form-check-label" for=""> Aceito as <a href="">diretrizes da comunidade</a>. <span id="campo-obrigatorio">* campos obrigatórios</span> </label>
+                <input class="form-check-input" type="checkbox" value="eula" id="eula" required />
+                <label class="form-check-label" for="eula"> Aceito as <a href="">diretrizes da comunidade</a>.</label>
             </div>
             <br>
             
+            <% if (msg != '') { %>
+                <div class="mb-3">
+                    <div
+                        class="alert alert-danger"
+                        role="alert"
+                    >
+                        <strong>Erro:</strong> <%- msg %>
+                    </div>
+                </div>
+            <% } %>
+
             <div class="mb-3 d-grid gap-2">
                 <button
                     type="submit"
@@ -138,10 +153,12 @@
 
         <br>
         <div class="mb-3">
-            <a href="/sign-in">
+            <a href="<%= global.ROUTE.SIGN_IN %>">
                 Voltar
             </a>
         </div>
+
+
     </div>
     
 </body>
