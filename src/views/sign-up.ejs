@@ -15,7 +15,7 @@
         <h1>Novo usuário:</h1>
         <hr>
 
-        <form action="<%= global.ROUTE.SIGN_UP %>" method="post">
+        <form action="<%= global.ROUTE.AUTH + global.ROUTE.SIGN_UP %>" method="post">
 
             <div
                 class="row justify-content-center align-items-center g-2"
@@ -81,15 +81,15 @@
                 <input
                 type="password"
                 class="form-control"
-                name="repetirSenha"
-                id="repetirSenha"
+                name="inputRepetirSenha"
+                id="inputRepetirSenha"
                 placeholder="********"
                 min="8"
                 max="24"
                 aria-describedby="descricaoSenha"
                 required
                 />
-                <label for="repetirSenha" class="form-label">Confirmar senha: <span id="campo-obrigatorio">*</span> </label>
+                <label for="inputRepetirSenha" class="form-label">Confirmar senha: <span id="campo-obrigatorio">*</span> </label>
                 <p class="form-text text-muted">Repita a senha criada no campo anterior.</p>
             </div>
             
@@ -124,8 +124,8 @@
             
             <br>
             <div class="mb-3 form-check">
-                <input class="form-check-input" type="checkbox" value="eula" id="eula" required />
-                <label class="form-check-label" for="eula"> Aceito as <a href="">diretrizes da comunidade</a>.</label>
+                <input class="form-check-input" type="checkbox"  id="inputEULA" name="inputEULA" value="1" required />
+                <label class="form-check-label" for="inputEULA"> Aceito as <a href="<%= global.ROUTE.EULA %>">diretrizes da comunidade</a>.</label>
             </div>
             <br>
             
@@ -153,7 +153,7 @@
 
         <br>
         <div class="mb-3">
-            <a href="<%= global.ROUTE.SIGN_IN %>">
+            <a href="<%= global.ROUTE.AUTH + global.ROUTE.SIGN_IN %>">
                 Voltar
             </a>
         </div>

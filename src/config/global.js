@@ -1,38 +1,48 @@
 
 const GLOBAL = {
     ROUTE:{
-        SIGN_IN:    '/sign-in',
+        
+        // Rotas abertas
         FORGET:     '/forget',
-
-        SIGN_UP:    '/sign-up',
         EULA:       '/eula',
-
+        
+        // Rotas de autenticação
+        AUTH:       '/auth',
+        SIGN_IN:    '/sign-in',
+        LOGIN:      '/login',
+        SIGN_UP:    '/sign-up',
+        LOGOUT:     '/logout',
+        
+        // Rotas protegidas
         HOME:       '/home',
-
-        MESSAGE:    '',
+        
     },
+
     ROUTE_TITLE:{
+
         SIGN_IN:    'Sign-in',
         FORGET:     '',
     
         SIGN_UP:    'Sign-up',
         EULA:       'EULA',
     
-        HOME:       'INICIO',
+        HOME:       'Inicio',
     
-        MESSAGE:    '',
     },
+
     VIEW:{
-        SIGN_IN:    'login.ejs',
+
+        SIGN_IN:    'sign-in.ejs',
         FORGET:     '',
     
-        SIGN_UP:    'cadastro.ejs',
+        SIGN_UP:    'sign-up.ejs',
         EULA:       'eula.ejs',
     
-        HOME:       '',
-    
-        MESSAGE:    '',
-    }
+        HOME:       'home.ejs',
+
+    },
+
+    COOKIE_NAME:    'projeto-lumos'
 }
 
 module.exports =  GLOBAL;

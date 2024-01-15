@@ -13,7 +13,7 @@
     >
         <h1>PROJETO LUMOS</h1>
         <hr>
-        <form action="<%= global.ROUTE.SIGN_UP %>" method="post">
+        <form action="<%= global.ROUTE.AUTH + global.ROUTE.LOGIN %>" method="post">
 
             <div class="mb-3 form-floating">
                 <input
@@ -38,7 +38,7 @@
                 </div>
 
             <div class="mb-3 form-check">
-                <input class="form-check-input" type="checkbox" value="" id="rememberMe" name="rememberMe" />
+                <input class="form-check-input" type="checkbox" value="12h" id="rememberMe" name="rememberMe" />
                 <label class="form-check-label" for="rememberMe"> Manter conecxão </label>
             </div>
             
@@ -50,16 +50,26 @@
                     Login
                 </button>
             </div>
-            
-            
+ 
             <p class="mb-3">
                 Esqueceu a senha? <a href="<%= global.ROUTE.FORGET %>"> Clique aqui para redefinir sua senha.</a>
             </p>
 
             <p class="mb-3">
-                Ainda não tem uma conta? <a href="<%= global.ROUTE.SIGN_UP %>"> Registre-se aqui.</a>
+                Ainda não tem uma conta? <a href="<%= global.ROUTE.AUTH + global.ROUTE.SIGN_UP %>"> Registre-se aqui.</a>
             </p>
         </form>
+        
+        <% if (msg != '') { %>
+            <div class="mb-3">
+                <div
+                    class="alert alert-danger"
+                    role="alert"
+                >
+                    <strong>Erro:</strong> <%- msg %>
+                </div>
+            </div>
+        <% } %>
         
     </div>
 </body>

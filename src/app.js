@@ -20,18 +20,19 @@ app.use(morgan('dev'));
 app.use(express.urlencoded({extended:true}));
 
 
-const noUser = require('./routes/noUser.routes.js');
-const rotaDeLogin = require('./routes/login.routes.js');
-const rotaDeCadastro = require('./routes/cadastro.routes.js');
-
 const checkAuthCookie = require('./middlewares/checkAuthCookie.js');
+const checkRouteExists = require('./middlewares/checkRouteExists.js');
+
+const publicRoutes = require('./routes/public.routes.js');
+const authRoutes = require('./routes/auth.routes.js');
+const privateRoutes = require('./routes/private.routes.js');
 
 const global = require('./config/global.js');
 
-app.use(noUser);
-app.use(global.ROUTE.SIGN_IN, rotaDeLogin);
-app.use(global.ROUTE.SIGN_UP, rotaDeCadastro);
+app.use(publicRoutes);
+app.use(global.ROUTE.AUTH, authRoutes);
 app.use(checkAuthCookie);
-
+app.use(privateRoutes);
+app.use(checkRouteExists);
 
 module.exports = app;

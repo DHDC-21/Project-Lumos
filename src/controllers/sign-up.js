@@ -1,5 +1,5 @@
 
-const global = require('../config/global');
+const global = require('../config/global.js');
 const bcrypt = require('bcrypt');
 
 const Usuario = require('../models/Usuario.js');
@@ -19,15 +19,15 @@ async function cadastrarNovoUsuario(req,res){
         inputSobrenome,
         inputEmail,
         inputSenha,
-        repetirSenha,
+        inputRepetirSenha,
         inputTelefone,
         inputFoto,
         inputStatus,
-        eula,
+        inputEULA,
     } = req.body;
     
-
-    if(eula == 'false'){
+    // O usuário aceitou as diretrizes da comunidade
+    if(inputEULA != 1){
         res.render(global.VIEW.SIGN_UP,{
             title: global.ROUTE_TITLE.SIGN_UP,
             msg: 'Você precisa aceitar as diretrizes da comunidade!',
@@ -35,8 +35,8 @@ async function cadastrarNovoUsuario(req,res){
         });
     }
 
-    // inputSenha é diferente de repetirSenha
-    if(inputSenha != repetirSenha){
+    // inputSenha é diferente de inputRepetirSenha
+    if(inputSenha != inputRepetirSenha){
         res.render(global.VIEW.SIGN_UP,{
             title: global.ROUTE_TITLE.SIGN_UP,
             msg: 'As senhas não são iguais!',
@@ -45,12 +45,12 @@ async function cadastrarNovoUsuario(req,res){
     }
 
     // O usuário existe?
-    const novoUsuario = await Usuario.findAll({
+    const emailJaCadastrado = await Usuario.findOne({
         where:{
             email: inputEmail,
         }
     });
-    if(novoUsuario){
+    if(emailJaCadastrado){
         res.render(global.VIEW.SIGN_UP,{
             title: global.ROUTE_TITLE.SIGN_UP + ' (ERRO!)',
             msg: 'E-mail já cadastrado!',
@@ -72,13 +72,15 @@ async function cadastrarNovoUsuario(req,res){
             telefone:   inputTelefone,
             foto:       inputFoto,
             status:     inputStatus,
-            eula:       eula,
+            eula:       inputEULA,
         });
         console.log({novoUsuario});
         res.redirect(global.ROUTE.SIGN_IN);
     } catch (error) {
         console.error('Erro ao salvar usuário: ', error);
     }
+
+    global.ROUTE.AUTH.TESTE
 }
 
 

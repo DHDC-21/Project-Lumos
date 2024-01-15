@@ -5,11 +5,11 @@ require('dotenv').config();
 
 
 function checkAuthCookie(req, res, next) {
-	const authCookie = req.cookies.auth_token;
+	const authCookie = req.cookies[global.COOKIE_NAME];
   
 	if (!authCookie) {
         // Redireciona para a tela de login se não houver cookie
-	    return res.redirect(global.ROUTE.SIGN_IN);
+	    return res.redirect(global.ROUTE.AUTH + global.ROUTE.SIGN_IN);
 	}
   
 	try {
@@ -18,7 +18,7 @@ function checkAuthCookie(req, res, next) {
         next(); 
 	} catch (error) {
         // Redireciona para a tela de login se o cookie for inválido
-	    res.redirect(global.ROUTE.SIGN_IN);
+	    res.redirect(global.ROUTE.AUTH + global.ROUTE.SIGN_IN);
 	}
 }
 
