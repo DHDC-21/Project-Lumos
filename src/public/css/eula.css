@@ -1,0 +1,17 @@
+
+@import url('style.css');
+
+body {
+    height: 100vh;
+    width: 100vw;
+}
+
+
+
+main > p {
+    text-indent: 2em;
+}
+
+main > ol > li {
+    font-weight: bold;
+}

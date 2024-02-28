@@ -1,0 +1,83 @@
+
+
+@import url('style.css');
+@import url('auth.css');
+
+
+body {
+    height: 100vh;
+    width: 100vw;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+
+header {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
+
+main {
+    height: auto;
+    width: 100%;
+
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+main #left {
+    height: 20em;
+    width: 30%;
+    background-image: url('/img/rpi-wallpapers/raspberry-pi-logo.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    transition: 0.5s;
+}
+
+
+main #rigth {
+    height: auto;
+    width: 60%;
+}
+
+footer {
+    position: absolute;
+    top:  90%;
+    font-weight: bold;
+}
+
+@media screen and (max-width:640px) {
+    body {
+        display: block;
+    }
+
+    header{
+        position: relative;
+        left: 0px;
+        text-align: center;
+        color: white;
+        margin-top: 1em;
+    }
+
+    main {
+        height: auto;
+        width: 100%;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    main #left {
+        display: none;
+    }
+
+    footer {
+        position: relative;
+        color: white;
+        top: 0px;
+        text-align: center;
+    }
+}

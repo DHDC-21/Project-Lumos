@@ -1,76 +1,97 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <link rel="stylesheet" href="/css/bootstrap.min.css">
-    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/sign-in.css">
+
+    <link rel="stylesheet" href="/bootstrap-icons.min.css">
+
+    <link rel="shortcut icon" href="/img/favicon.png" type="image/x-icon">
     <title><%- title %></title>
 </head>
-<body>
-    <div
-        class="container"
-    >
-        <h1>PROJETO LUMOS</h1>
-        <hr>
-        <form action="<%= global.ROUTE.AUTH + global.ROUTE.LOGIN %>" method="post">
 
-            <div class="mb-3 form-floating">
-                <input
-                    type="email"
-                    class="form-control"
-                    name="inputEmail"
-                    id="inputEmail"
-                    placeholder="exemplo@email.com"
-                />
-                <label for="inputEmail" class="form-label">E-mail:</label>
-            </div>
+<body id="sign-in">
+    
+    <header>
+        <i class="bi bi-discord"></i> PROJETO-LUMOS
+    </header>
 
-            <div class="mb-3 form-floating">
-                <input
-                    type="password"
-                    class="form-control"
-                    name="inputSenha"
-                    id="inputSenha"
-                    placeholder="********"
-                />
-                <label for="inputSenha" class="form-label">Senha:</label>
+    <main>
+
+        <div id="left"></div>
+
+        <div id="rigth">
+
+            <h1>Boas-vindas!</h1>
+            <hr>
+
+            <form action="<%= global.ROUTE.AUTH + global.ROUTE.LOGIN %>" method="post">
+    
+                <div class="mb-3 form-floating">
+                    <input
+                        type="email"
+                        class="form-control"
+                        name="inputEmail"
+                        id="inputEmail"
+                        placeholder="exemplo@email.com"
+                        required
+                    />
+                    <label for="inputEmail" class="form-label" id="inputEmail">E-mail:</label>
                 </div>
-
-            <div class="mb-3 form-check">
-                <input class="form-check-input" type="checkbox" value="12h" id="rememberMe" name="rememberMe" />
-                <label class="form-check-label" for="rememberMe"> Manter conecxão </label>
-            </div>
+    
+                <div class="mb-3 form-floating">
+                    <input
+                        type="password"
+                        class="form-control"
+                        name="inputSenha"
+                        id="inputSenha"
+                        placeholder="********"
+                        required
+                    />
+                    <label for="inputSenha" class="form-label" id="inputSenha">Senha:</label>
+                    <a href="<%= global.ROUTE.FORGET %>"> Esqueceu a senha? </a>
+                </div>
+                
+                
+    
+                <div class="mb-3 form-check">
+                    <input class="form-check-input" type="checkbox" value="12h" id="rememberMe" name="rememberMe" />
+                    <label class="form-check-label" for="rememberMe" id="rememberMe"> Manter conecxão </label>
+                </div>
+                
+                <div class="mb-3 d-grid gap-2">
+                    <button
+                        type="submit"
+                        class="btn btn-primary"
+                    >
+                        Login
+                    </button>
+                </div>
+        
+    
+                <p class="mb-3">
+                    Ainda não tem uma conta? <a href="<%= global.ROUTE.AUTH + global.ROUTE.SIGN_UP %>" rel="next"> Registre-se.</a>
+                </p>
+            </form>
             
-            <div class="mb-3 d-grid gap-2">
-                <button
-                    type="submit"
-                    class="btn btn-primary"
-                >
-                    Login
-                </button>
-            </div>
- 
-            <p class="mb-3">
-                Esqueceu a senha? <a href="<%= global.ROUTE.FORGET %>"> Clique aqui para redefinir sua senha.</a>
-            </p>
-
-            <p class="mb-3">
-                Ainda não tem uma conta? <a href="<%= global.ROUTE.AUTH + global.ROUTE.SIGN_UP %>"> Registre-se aqui.</a>
-            </p>
-        </form>
-        
-        <% if (msg != '') { %>
-            <div class="mb-3">
-                <div
-                    class="alert alert-danger"
-                    role="alert"
-                >
-                    <strong>Erro:</strong> <%- msg %>
+            <% if (msg != '') { %>
+                <div class="mb-3">
+                    <div
+                        class="alert alert-danger"
+                        role="alert"
+                    >
+                        <strong>Erro:</strong> <%- msg %>
+                    </div>
                 </div>
-            </div>
-        <% } %>
-        
-    </div>
+            <% } %>
+
+        </div>
+    </main>
+    <footer>
+        Criado por Douglas Henrique.
+    </footer>
 </body>
 </html>

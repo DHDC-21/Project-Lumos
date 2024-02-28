@@ -1,165 +1,166 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
     <link rel="stylesheet" href="/css/bootstrap.min.css">
-    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/sign-up.css">
+
+    <link rel="shortcut icon" href="/img/favicon.png" type="image/x-icon">
+    
     <title> <%- title %> </title>
 </head>
-<body>
+<body id="sign-up">
 
-    <div
-        class="container"
-        >
-        <h1>Novo usuário:</h1>
-        <hr>
+    <main>
 
-        <form action="<%= global.ROUTE.AUTH + global.ROUTE.SIGN_UP %>" method="post">
+            <h1>Novo usuário:</h1>
 
-            <div
-                class="row justify-content-center align-items-center g-2"
-            >
-                <div class="col">
-                    <div class="form-floating mb-3">
-                        <input
-                            type="text"
-                            class="form-control"
-                            name="inputNome"
-                            id="inputNome"
-                            placeholder=""
-                            required
-                        />
-                        <label for="inputNome">Nome: <span id="campo-obrigatorio">*</span> </label>
-                    </div>
-                    
-                </div>
-                <div class="col">
-                    <div class="form-floating mb-3">
-                        <input
-                            type="text"
-                            class="form-control"
-                            name="inputSobrenome"
-                            id="inputSobrenome"
-                            placeholder=""
-                        />
-                        <label for="inputSobrenome">Sobrenome:</label>
-                    </div>
-                </div>
-            </div>
-            
-            
-            <div class="mb-3 form-floating">
-                <input
-                type="email"
-                class="form-control"
-                name="inputEmail"
-                id="inputEmail"
-                placeholder="exemplo@email.com"
-                required
-                />
-                <label for="inputEmail" class="form-label">E-mail: <span id="campo-obrigatorio">*</span> </label>
-            </div>
-            
-            <div class="mb-3 form-floating">
-                <input
-                type="password"
-                class="form-control"
-                name="inputSenha"
-                id="inputSenha"
-                placeholder="********"
-                min="8"
-                max="24"
-                aria-describedby="descricaoSenha"
-                required
-                />
-                <label for="inputSenha" class="form-label">Senha: <span id="campo-obrigatorio">*</span> </label>
-                <small class="text-muted" id="descricaoSenha"> Crie uma senha forte com 8 a 24 caracterers, incluindo maisúsculas e minúsculas (A-z), números (0-9) e caracteres especiais. </small>
-            </div>
-            
-            <div class="mb-3 form-floating">
-                <input
-                type="password"
-                class="form-control"
-                name="inputRepetirSenha"
-                id="inputRepetirSenha"
-                placeholder="********"
-                min="8"
-                max="24"
-                aria-describedby="descricaoSenha"
-                required
-                />
-                <label for="inputRepetirSenha" class="form-label">Confirmar senha: <span id="campo-obrigatorio">*</span> </label>
-                <p class="form-text text-muted">Repita a senha criada no campo anterior.</p>
-            </div>
-            
-            <div class="form-floating mb-3">
-                <input
-                    type="tel"
-                    class="form-control"
-                    name="inputTelefone"
-                    id="inputTelefone"
-                    placeholder="(XXX) 9 XXXX-XXXX"
-                />
-                <label for="formId1">Telefone:</label>
-            </div>
+            <hr>
 
-            <div class="mb-3">
-                <label for="" class="form-label">Foto de perfil:</label>
-                <input
-                    type="file"
-                    class="form-control"
-                    name="inputFoto"
-                    id="inputFoto"
-                    placeholder=""
-                    aria-describedby="descricaoFoto"
-                />
-                <div id="descricaoFoto" class="form-text">Suba apenas arquivos de imagem png ou jpg.</div>
-            </div>
+            <form action="<%= global.ROUTE.AUTH + global.ROUTE.SIGN_UP %>" method="post">
 
-            <div class="mb-3">
-                <label for="inputStatus" class="form-label">Mensagem de status:</label>
-                <textarea class="form-control" name="inputStatus" id="inputStatus" rows="3" maxlength="255"></textarea>
-            </div>
-            
-            <br>
-            <div class="mb-3 form-check">
-                <input class="form-check-input" type="checkbox"  id="inputEULA" name="inputEULA" value="1" required />
-                <label class="form-check-label" for="inputEULA"> Aceito as <a href="<%= global.ROUTE.EULA %>">diretrizes da comunidade</a>.</label>
-            </div>
-            <br>
-            
-            <% if (msg != '') { %>
-                <div class="mb-3">
-                    <div
-                        class="alert alert-danger"
-                        role="alert"
-                    >
-                        <strong>Erro:</strong> <%- msg %>
-                    </div>
-                </div>
-            <% } %>
-
-            <div class="mb-3 d-grid gap-2">
-                <button
-                    type="submit"
-                    class="btn btn-primary btn-lg"
+                <div
+                    class="row justify-content-center align-items-center g-2"
                 >
-                    Cadastrar
-                </button>
-            </div>
-            
-        </form>
+                    <div class="col">
+                        <div class="form-floating mb-3">
+                            <input
+                                type="text"
+                                class="form-control"
+                                name="inputNome"
+                                id="inputNome"
+                                placeholder=""
+                                required
+                            />
+                            <label for="inputNome">Nome: <span class="campo-obrigatorio">*</span> </label>
+                        </div>
+                        
+                    </div>
+                    <div class="col">
+                        <div class="form-floating mb-3">
+                            <input
+                                type="text"
+                                class="form-control"
+                                name="inputSobrenome"
+                                id="inputSobrenome"
+                                placeholder=""
+                            />
+                            <label for="inputSobrenome">Sobrenome:</label>
+                        </div>
+                    </div>
+                </div>
+                
+                
+                <div class="mb-3 form-floating">
+                    <input
+                    type="email"
+                    class="form-control"
+                    name="inputEmail"
+                    id="inputEmail"
+                    placeholder="exemplo@email.com"
+                    required
+                    />
+                    <label for="inputEmail" class="form-label">E-mail: <span class="campo-obrigatorio">*</span> </label>
+                </div>
+                
+                <div class="mb-3 form-floating">
+                    <input
+                    type="password"
+                    class="form-control"
+                    name="inputSenha"
+                    id="inputSenha"
+                    placeholder="********"
+                    min="8"
+                    max="24"
+                    aria-describedby="descricaoSenha"
+                    required
+                    />
+                    <label for="inputSenha" class="form-label">Senha: <span class="campo-obrigatorio">*</span> </label>
+                    <small class="text-muted" id="descricaoSenha"> Crie uma senha forte com 8 a 24 caracterers, incluindo maisúsculas e minúsculas (A-z), números (0-9) e caracteres especiais. </small>
+                </div>
+                
+                <div class="mb-3 form-floating">
+                    <input
+                    type="password"
+                    class="form-control"
+                    name="inputRepetirSenha"
+                    id="inputRepetirSenha"
+                    placeholder="********"
+                    min="8"
+                    max="24"
+                    aria-describedby="descricaoSenha"
+                    required
+                    />
+                    <label for="inputRepetirSenha" class="form-label">Confirmar senha: <span class="campo-obrigatorio">*</span> </label>
+                    <p class="form-text text-muted">Repita a senha criada no campo anterior.</p>
+                </div>
+                
+                <div class="form-floating mb-3">
+                    <input
+                        type="tel"
+                        class="form-control"
+                        name="inputTelefone"
+                        id="inputTelefone"
+                        placeholder="(XXX) 9 XXXX-XXXX"
+                    />
+                    <label for="formId1">Telefone:</label>
+                </div>
 
-        <br>
-        <div class="mb-3">
-            <a href="<%= global.ROUTE.AUTH + global.ROUTE.SIGN_IN %>">
-                Voltar
-            </a>
-        </div>
+                <div class="mb-3">
+                    <label for="" class="form-label">Foto de perfil:</label>
+                    <input
+                        type="file"
+                        class="form-control"
+                        name="inputFoto"
+                        id="inputFoto"
+                        placeholder=""
+                        aria-describedby="descricaoFoto"
+                        accept="image/*"
+                    />
+                    <div id="descricaoFoto" class="form-text">Suba apenas arquivos de imagem png ou jpg.</div>
+                </div>
 
+                <div class="mb-3">
+                    <label for="inputStatus" class="form-label">Mensagem de status:</label>
+                    <textarea class="form-control" name="inputStatus" id="inputStatus" rows="3" maxlength="255"></textarea>
+                </div>
+                
+                <br>
+                <div class="mb-3 form-check">
+                    <input class="form-check-input" type="checkbox"  id="inputEULA" name="inputEULA" value="1" required />
+                    <label class="form-check-label" for="inputEULA"> Aceito as <a href="<%= global.ROUTE.EULA %>" rel="next">diretrizes da comunidade</a>.</label>
+                </div>
+                <br>
+                
+                <% if (msg != '') { %>
+                    <div class="mb-3">
+                        <div
+                            class="alert alert-danger"
+                            role="alert"
+                        >
+                            <strong>Erro:</strong> <%- msg %>
+                        </div>
+                    </div>
+                <% } %>
 
-    </div>
+                <div class="mb-3 d-grid gap-2">
+                    <button
+                        type="submit"
+                        class="btn btn-primary btn-lg"
+                    >
+                        Cadastrar
+                    </button>
+                </div>
+                
+            </form>
+
+            <br>
+            <div class="mb-3">
+                <a href="<%= global.ROUTE.AUTH + global.ROUTE.SIGN_IN %>" rel="prev">Eu já tenho uma conta.</a>
+            </div>       
+    </mai>
     
 </body>
 </html>

@@ -1,10 +1,14 @@
 
 const cookieParser = require('cookie-parser');
 const express = require('express');
+const http = require('http');
 const morgan = require('morgan');
 const path = require('path');
+const socketIo = require('socket.io');
 
 const app = express();
+const server = http.createServer(app);
+const io = socketIo(server);
 
 app.engine('html', require('ejs').renderFile);
 app.set('view engine', 'html');
@@ -12,6 +16,7 @@ app.set('views', path.join(__dirname, 'views'));
 
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.static(path.join(__dirname, '..' , 'node_modules', 'bootstrap', 'dist')));
+app.use(express.static(path.join(__dirname, '..' , 'node_modules', 'bootstrap-icons', 'font')));
 
 app.use(express.json());
 app.use(cookieParser());
@@ -35,4 +40,8 @@ app.use(checkAuthCookie);
 app.use(privateRoutes);
 app.use(checkRouteExists);
 
-module.exports = app;
+module.exports = {
+    app,
+    server,
+    io,
+};

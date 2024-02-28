@@ -1,0 +1,32 @@
+
+@import url('style.css');
+
+body {
+    display: grid;
+}
+
+header div#logo {
+    display: block;
+    background-color: var(--color1);
+    color: white;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+header nav {
+    background-color: var(--color2);
+    display: flex;
+    justify-content: space-between;
+    padding: 1em;
+}
+
+main {
+    display: flex;
+    max-width: 1024px;
+    min-height: 80vh;
+}
+
+main > nav {
+    background-color: var(--color3);
+    width: 300px;
+}

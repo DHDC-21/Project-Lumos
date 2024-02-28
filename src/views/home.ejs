@@ -1,18 +1,48 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <link rel="stylesheet" href="/css/bootstrap.min.css">
-    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/home.css">
+
+    <link rel="stylesheet" href="/bootstrap-icons.min.css">
+    
+    <link rel="shortcut icon" href="favicon.png" type="image/x-icon">
     <title><%-title%></title>
 </head>
-<%- include('./partials/navbar.ejs') %>
 <body>
-    <div
-    class="container"
-    >
-        <h1>Olá mundo!</h1>
-    </div>
+    <header>
+        <div id="logo">
+            projeto-lumos
+        </div>
+        <nav>
+            <i class="bi bi-list"></i>
+            @Fulano
+            <i class="bi bi-person-fill"></i>
+        </nav>
+    </header>
+    
+    <main>
+
+        <nav>
+            <i class="bi bi-person-fill-add"></i>
+            <div>
+                Eu
+                <i class="bi bi-person-fill-gear"></i>
+            </div>
+        </nav>
+
+        <div class="container">
+            
+            <h1> Bem-vindo(a) ao <strong>projeto-lumos</strong></h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo praesentium aspernatur culpa possimus, corrupti repudiandae minus ipsam mollitia fugiat, vero quos facilis in eum ipsum sunt maxime tempore, perspiciatis quae.</p>
+        </div>
+    </main>
+    
+    <footer>
+        Rodapé
+    </footer>
 </body>
 </html>

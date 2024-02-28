@@ -1,5 +1,5 @@
 
-const server = require('./src/app.js');
+const { server } = require('./src/app.js');
 const ip = require('ip');
 require('dotenv').config();
 
