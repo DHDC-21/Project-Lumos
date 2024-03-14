@@ -34,7 +34,7 @@ async function autenticarLogin(req,res){
         if(!usuario){
             res.render(global.VIEW.SIGN_IN,{
                 title: global.ROUTE_TITLE.SIGN_IN,
-                msg: 'Usuário e/ou senha incorretos!' + 'dev: usuário',
+                msg: 'Usuário e/ou senha incorretos!' + ' dev: usuário errado',
                 global,
             });
         }
@@ -46,7 +46,7 @@ async function autenticarLogin(req,res){
         if(!checkPassword){
             res.render(global.VIEW.SIGN_IN,{
                 title: global.ROUTE_TITLE.SIGN_IN,
-                msg: 'Usuário e/ou senha incorretos!' + 'dev: senha',
+                msg: 'Usuário e/ou senha incorretos!' + ' dev: senha errada',
                 global,
             });
         }
