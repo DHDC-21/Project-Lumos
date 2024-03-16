@@ -13,7 +13,13 @@ function checkAuthCookie(req, res, next) {
 	}
   
 	try {
-        jwt.verify(authCookie, process.env.JWT_SECRET);
+		// decodificando o cookie
+        const decoded = jwt.verify(authCookie, process.env.JWT_SECRET);
+
+		// decodificando o userId passado no cookie
+		const userId = decoded.id;
+		req.userId = userId;
+		
 		// Continue para a rota protegida
         next(); 
 	} catch (error) {

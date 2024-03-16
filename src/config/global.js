@@ -14,7 +14,7 @@ const GLOBAL = {
         LOGOUT:     '/logout',
         
         // Rotas protegidas
-        HOME:       '/home',
+        HOME:       '/',
         
     },
 
@@ -26,7 +26,7 @@ const GLOBAL = {
         SIGN_UP:    'Sign-up',
         EULA:       'EULA',
     
-        HOME:       'Inicio',
+        HOME:       'projeto-lumos',
     
     },
 

@@ -14,35 +14,35 @@
 </head>
 <body>
     <header>
-        <div id="logo">
             projeto-lumos
-        </div>
-        <nav>
-            <i class="bi bi-list"></i>
-            @Fulano
-            <i class="bi bi-person-fill"></i>
-        </nav>
     </header>
     
     <main>
-
         <nav>
-            <i class="bi bi-person-fill-add"></i>
-            <div>
-                Eu
-                <i class="bi bi-person-fill-gear"></i>
-            </div>
+            <i class="bi bi-list"></i>
+            <i class="bi bi-person-fill"></i>
         </nav>
+        
+        <div id="mensageiro">
+            <div id="esquerda">
+                <i class="bi bi-person-fill-add btn btn-primary"> ADICIONAR </i>
+                <div id="usuario">
+                    <%= usuario.nome + ' ' +usuario.sobrenome %>
+                    <i class="bi bi-person-fill-gear btn"></i>
+                </div>
+            </div>
 
-        <div class="container">
+            <div class="container" id="centro">
+                <h1> Bem-vindo(a) ao <strong>projeto-lumos</strong></h1>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo praesentium aspernatur culpa possimus, corrupti repudiandae minus ipsam mollitia fugiat, vero quos facilis in eum ipsum sunt maxime tempore, perspiciatis quae.</p>
+            </div>
             
-            <h1> Bem-vindo(a) ao <strong>projeto-lumos</strong></h1>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo praesentium aspernatur culpa possimus, corrupti repudiandae minus ipsam mollitia fugiat, vero quos facilis in eum ipsum sunt maxime tempore, perspiciatis quae.</p>
+            <div id="direita">
+                Direita
+            </div>
         </div>
+        <!-- &copy; criado por DHDC-21. -->
     </main>
-    
-    <footer>
-        Rodapé
-    </footer>
+
 </body>
 </html>
