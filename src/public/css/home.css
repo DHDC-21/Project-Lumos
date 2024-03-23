@@ -33,13 +33,13 @@ body main div#mensageiro {
   background-color: #182033;
 }
 body main div#mensageiro div#esquerda {
-  width: 300px;
+  width: 400px;
   border-radius: 1em;
   background-color: #3b4357;
   color: white;
   padding: 1em;
-  display: block;
-  align-items: end;
+  display: table-row;
+  align-items: center;
 }
 body main div#mensageiro div#esquerda div#usuario {
   background-color: rgb(121, 126, 138);
@@ -48,17 +48,23 @@ body main div#mensageiro div#esquerda div#usuario {
   align-items: center;
   margin: 0 -1em;
   padding: 0.5em;
+  height: 75px;
+  width: auto;
 }
 body main div#mensageiro div#centro {
   background-color: #3b4357;
   margin: 0 1em 0 1em;
 }
 body main div#mensageiro div#direita {
-  width: 300px;
+  width: 400px;
   border-radius: 1em;
   background-color: #3b4357;
   color: white;
   padding: 1em;
+}
+
+#modalUsuarios .modal-content {
+  background-color: #3b4357;
 }
 
 /*# sourceMappingURL=home.css.map */

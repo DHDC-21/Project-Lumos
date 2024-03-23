@@ -21,7 +21,7 @@ async function cadastrarNovoUsuario(req,res){
         inputSenha,
         inputRepetirSenha,
         inputTelefone,
-        inputFoto,
+        // inputFoto,
         inputStatus,
         inputEULA,
     } = req.body;
@@ -63,6 +63,8 @@ async function cadastrarNovoUsuario(req,res){
         const salt = await bcrypt.genSalt(12);
         const senhaHash = await bcrypt.hash(inputSenha, salt);
 
+        const filePath = req.file.path;
+
         // Criando o novo usuário
         const novoUsuario = await Usuario.create({
             nome:       inputNome,
@@ -70,7 +72,7 @@ async function cadastrarNovoUsuario(req,res){
             email:      inputEmail,
             senha:      senhaHash,
             telefone:   inputTelefone,
-            foto:       inputFoto,
+            foto:       filePath,
             status:     inputStatus,
             eula:       inputEULA,
         });

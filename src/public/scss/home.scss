@@ -1,5 +1,4 @@
 
-// @import './style.scss';
 @import './palette.scss';
 
 * {
@@ -9,7 +8,7 @@
 }
 
 @mixin barrasLaterais{
-    width: 300px;
+    width: 400px;
     border-radius: 1em;
     background-color: $gray;
     color: white;
@@ -47,8 +46,8 @@ body {
             
             div#esquerda{
                 @include barrasLaterais();
-                display: block;
-                align-items: end;
+                display: table-row;
+                align-items: center;
                 div#usuario {
                     background-color: $slate-gray;
                     display: flex;
@@ -56,6 +55,9 @@ body {
                     align-items: center;
                     margin: 0 -1em;
                     padding: 0.5em;
+                    
+                    height: 75px;
+                    width: auto;
                 }
             }
             
@@ -69,4 +71,8 @@ body {
             }
         }
     }
+}
+
+#modalUsuarios .modal-content {
+    background-color: $gray;
 }

@@ -15,7 +15,7 @@ const GLOBAL = {
         
         // Rotas protegidas
         HOME:       '/',
-        
+        BUSCAR_AMIGO:   '/bucar-amigos',
     },
 
     ROUTE_TITLE:{
@@ -32,13 +32,14 @@ const GLOBAL = {
 
     VIEW:{
 
-        SIGN_IN:    'sign-in.ejs',
+        SIGN_IN:    'sign-in',
         FORGET:     '',
     
-        SIGN_UP:    'sign-up.ejs',
-        EULA:       'eula.ejs',
+        SIGN_UP:    'sign-up',
+        EULA:       'eula',
     
-        HOME:       'home.ejs',
+        HOME:       'home',
+        BUSCAR_AMIGO:   'partials/buscarAmigos.ejs'
 
     },
 

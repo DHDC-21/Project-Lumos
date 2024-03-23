@@ -24,7 +24,7 @@ const Usuario = database.define('Usuario',{
         allowNull: true,
     },
     foto:{
-        type: DataTypes.BLOB,
+        type: DataTypes.TEXT('long'),
         allowNull: true,
     },
     status:{

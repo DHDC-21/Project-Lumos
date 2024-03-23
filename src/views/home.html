@@ -6,10 +6,10 @@
 
     <link rel="stylesheet" href="/css/bootstrap.min.css">
     <link rel="stylesheet" href="/css/home.css">
-
+    
     <link rel="stylesheet" href="/bootstrap-icons.min.css">
     
-    <link rel="shortcut icon" href="favicon.png" type="image/x-icon">
+    <link rel="shortcut icon" href="/img/favicon.png" type="image/x-icon">
     <title><%-title%></title>
 </head>
 <body>
@@ -18,20 +18,29 @@
     </header>
     
     <main>
-        <nav>
-            <i class="bi bi-list"></i>
-            <i class="bi bi-person-fill"></i>
-        </nav>
+        <%- include('./partials/navbar.ejs') %>
         
         <div id="mensageiro">
             <div id="esquerda">
-                <i class="bi bi-person-fill-add btn btn-primary"> ADICIONAR </i>
+                <button
+                    class="bi bi-person-fill-add btn btn-secondary"
+                    data-bs-toggle="modal"
+                    data-bs-target="#modalUsuarios"
+                > ADICIONAR </button>
+
+                <%- include('./partials/modalBuscarAmigos.ejs') %>
+                
                 <div id="usuario">
-                    <%= usuario.nome + ' ' +usuario.sobrenome %>
+                    <img
+                    src="/<%= usuario.foto.replace('uploads/', '') %>"
+                    alt="foto"
+                    class="img-thumbnail rounded-circle mh-100"
+                    > 
+                    <%= usuario.nome %>
                     <i class="bi bi-person-fill-gear btn"></i>
                 </div>
             </div>
-
+            
             <div class="container" id="centro">
                 <h1> Bem-vindo(a) ao <strong>projeto-lumos</strong></h1>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo praesentium aspernatur culpa possimus, corrupti repudiandae minus ipsam mollitia fugiat, vero quos facilis in eum ipsum sunt maxime tempore, perspiciatis quae.</p>
@@ -44,5 +53,10 @@
         <!-- &copy; criado por DHDC-21. -->
     </main>
 
+    <script>
+        window.global = JSON.parse('<%- JSON.stringify(global) %>');
+    </script>
+    <script src="/js/modalBuscarAmigos.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
 </body>
 </html>

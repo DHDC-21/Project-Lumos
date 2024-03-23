@@ -17,6 +17,7 @@ app.set('views', path.join(__dirname, 'views'));
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.static(path.join(__dirname, '..' , 'node_modules', 'bootstrap', 'dist')));
 app.use(express.static(path.join(__dirname, '..' , 'node_modules', 'bootstrap-icons', 'font')));
+app.use(express.static(path.join(__dirname, '..' , 'uploads')));
 
 app.use(express.json());
 app.use(cookieParser());
@@ -33,6 +34,7 @@ const authRoutes = require('./routes/auth.routes.js');
 const privateRoutes = require('./routes/private.routes.js');
 
 const global = require('./config/global.js');
+const multer = require('multer');
 
 app.use(publicRoutes);
 app.use(global.ROUTE.AUTH, authRoutes);
