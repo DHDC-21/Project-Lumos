@@ -6,8 +6,8 @@ const Usuario = require('../models/Usuario.js');
 
 
 function telaDeCadastro(req,res){
-    res.render(global.VIEW.SIGN_UP,{
-        title: global.ROUTE_TITLE.SIGN_UP,
+    res.render(global.VIEW.REGISTER,{
+        title: global.TITLE.REGISTER,
         msg: '',
         global,
     });
@@ -28,8 +28,8 @@ async function cadastrarNovoUsuario(req,res){
     
     // O usuário aceitou as diretrizes da comunidade
     if(inputEULA != 1){
-        res.render(global.VIEW.SIGN_UP,{
-            title: global.ROUTE_TITLE.SIGN_UP,
+        res.render(global.VIEW.REGISTER,{
+            title: global.TITLE.REGISTER,
             msg: 'Você precisa aceitar as diretrizes da comunidade!',
             global,
         });
@@ -37,8 +37,8 @@ async function cadastrarNovoUsuario(req,res){
 
     // inputSenha é diferente de inputRepetirSenha
     if(inputSenha != inputRepetirSenha){
-        res.render(global.VIEW.SIGN_UP,{
-            title: global.ROUTE_TITLE.SIGN_UP,
+        res.render(global.VIEW.REGISTER,{
+            title: global.TITLE.REGISTER,
             msg: 'As senhas não são iguais!',
             global
         });
@@ -51,8 +51,8 @@ async function cadastrarNovoUsuario(req,res){
         }
     });
     if(emailJaCadastrado){
-        res.render(global.VIEW.SIGN_UP,{
-            title: global.ROUTE_TITLE.SIGN_UP + ' (ERRO!)',
+        res.render(global.VIEW.REGISTER,{
+            title: global.TITLE.REGISTER + ' (ERRO!)',
             msg: 'E-mail já cadastrado!',
             global,
         })
@@ -82,7 +82,6 @@ async function cadastrarNovoUsuario(req,res){
         console.error('Erro ao salvar usuário: ', error);
     }
 
-    global.ROUTE.AUTH.TESTE
 }
 
 

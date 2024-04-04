@@ -9,11 +9,11 @@ const { telaDeLogin, autenticarLogin, removerCookie } = require('../controllers/
 const { telaDeCadastro, cadastrarNovoUsuario } = require('../controllers/sign-up');
 
 
-router.get(global.ROUTE.SIGN_IN, telaDeLogin);
+router.get(global.ROUTE.LOGIN, telaDeLogin);
 router.post(global.ROUTE.LOGIN, autenticarLogin);
 
-router.get(global.ROUTE.SIGN_UP, telaDeCadastro);
-router.post(global.ROUTE.SIGN_UP, fileUpload.single('inputFoto'), cadastrarNovoUsuario);
+router.get(global.ROUTE.REGISTER, telaDeCadastro);
+router.post(global.ROUTE.REGISTER, fileUpload.single('inputFoto'), cadastrarNovoUsuario);
 
 router.get(global.ROUTE.LOGOUT, removerCookie);
 

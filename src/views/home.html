@@ -28,22 +28,28 @@
                     data-bs-target="#modalUsuarios"
                 > ADICIONAR </button>
 
-                <%- include('./partials/modalBuscarAmigos.ejs') %>
+                <%- include('./partials/modalBuscarUsuarios.ejs') %>
                 
+
                 <div id="usuario">
                     <img
                     src="/<%= usuario.foto.replace('uploads/', '') %>"
                     alt="foto"
                     class="img-thumbnail rounded-circle mh-100"
+                    onerror="this.error=null; this.src='/img/favicon.png';"
                     > 
-                    <%= usuario.nome %>
+                    <strong><%= usuario.nome %></strong>
+                    
                     <i class="bi bi-person-fill-gear btn"></i>
+                    
+
                 </div>
             </div>
             
             <div class="container" id="centro">
                 <h1> Bem-vindo(a) ao <strong>projeto-lumos</strong></h1>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo praesentium aspernatur culpa possimus, corrupti repudiandae minus ipsam mollitia fugiat, vero quos facilis in eum ipsum sunt maxime tempore, perspiciatis quae.</p>
+
             </div>
             
             <div id="direita">
@@ -56,7 +62,7 @@
     <script>
         window.global = JSON.parse('<%- JSON.stringify(global) %>');
     </script>
-    <script src="/js/modalBuscarAmigos.js"></script>
+    <script src="/js/modalBuscarUsuarios.js"></script>
     <script src="/js/bootstrap.min.js"></script>
 </body>
 </html>

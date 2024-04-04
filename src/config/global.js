@@ -1,45 +1,55 @@
 
 const GLOBAL = {
     ROUTE:{
-        
         // Rotas abertas
-        FORGET:     '/forget',
-        EULA:       '/eula',
+        EULA:           '/eula',
         
         // Rotas de autenticação
-        AUTH:       '/auth',
-        SIGN_IN:    '/sign-in',
-        LOGIN:      '/login',
-        SIGN_UP:    '/sign-up',
-        LOGOUT:     '/logout',
+        AUTH:               '/auth',
+        
+        LOGIN:              '/login',
+        REGISTER:           '/register',
+        LOGOUT:             '/logout',
+        FORGET:             '/forget',
         
         // Rotas protegidas
-        HOME:       '/',
-        BUSCAR_AMIGO:   '/bucar-amigos',
+        HOME:               '/',
+
+        SEARCH_USER:        '/search-user',
+        BLOCK_USER:         '/block-user',
+        ADD_FRIEND:         '/add-friend',
+        ACCEPT_FRIEND:      '/accept-friend',
+        UNFRIEND:           '/unfriend',
+
+        OPEN_CHAT:          '',
+        DISPLAY_MESSAGE:    '',
+        SEND_MESSAGE:       '',
+        EDIT_MESSAGE:       '',
+        DELETE_MESSAGE:     '',
     },
 
-    ROUTE_TITLE:{
+    TITLE:{
+        // Rotas abertas
+        EULA:               'DIRETRIZES',
+        
+        // Rotas de autenticação
+        LOGIN:              'Sign-in',
+        REGISTER:           'Sign-up',
+        
+        // Rotas protegidas
+        HOME:               'projeto-lumos',
 
-        SIGN_IN:    'Sign-in',
-        FORGET:     '',
-    
-        SIGN_UP:    'Sign-up',
-        EULA:       'EULA',
-    
-        HOME:       'projeto-lumos',
-    
     },
 
     VIEW:{
 
-        SIGN_IN:    'sign-in',
-        FORGET:     '',
+        EULA:               'eula',
+        
+        LOGIN:              'sign-in',
+        REGISTER:           'sign-up',
     
-        SIGN_UP:    'sign-up',
-        EULA:       'eula',
-    
-        HOME:       'home',
-        BUSCAR_AMIGO:   'partials/buscarAmigos.ejs'
+        HOME:               'home',
+        SEARCH_USER:        'partials/buscarUsuarios.ejs',
 
     },
 

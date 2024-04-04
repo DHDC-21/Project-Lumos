@@ -1,5 +1,6 @@
 
 const cookieParser = require('cookie-parser');
+const bodyParser = require('body-parser')
 const express = require('express');
 const http = require('http');
 const morgan = require('morgan');
@@ -22,6 +23,9 @@ app.use(express.static(path.join(__dirname, '..' , 'uploads')));
 app.use(express.json());
 app.use(cookieParser());
 app.use(morgan('dev'));
+
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({extended:true}));
 
 app.use(express.urlencoded({extended:true}));
 

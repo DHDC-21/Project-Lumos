@@ -9,7 +9,7 @@ function buscarUsuarios() {
 
     // Configurar a solicitação AJAX
     console.log("Enviando busca para o back-end.");
-    xhr.open("POST", global.ROUTE.BUSCAR_AMIGO, true);
+    xhr.open("POST", global.ROUTE.SEARCH_USER, true);
     xhr.setRequestHeader("Content-Type", "application/json");
 
     // Ao receber a Resposta
@@ -38,3 +38,25 @@ document.getElementById('inputBuscarUsuario').addEventListener('keyup',function(
         buscarUsuarios();
     }
 });
+
+function adicionarAmigo(userId, userName){
+  console.log('Enviando pedido de amizade para ' + userName);
+  
+  fetch(global.ROUTE.ADD_FRIEND,{
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({amigoId:userId})
+  })
+  .then(response=>{
+    if(response.ok){
+      console.log('Solicitação de amizade enviada para ' + userName);
+    } else {
+      console.error('Erro ao enviar solicitação de amizade');
+    }
+  })
+  .catch(error=>{
+    console.error('Erro ao adicionar amigo: ', error);
+  });
+}

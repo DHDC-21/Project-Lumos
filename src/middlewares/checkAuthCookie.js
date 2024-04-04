@@ -9,7 +9,7 @@ function checkAuthCookie(req, res, next) {
   
 	if (!authCookie) {
         // Redireciona para a tela de login se não houver cookie
-	    return res.redirect(global.ROUTE.AUTH + global.ROUTE.SIGN_IN);
+	    return res.redirect(global.ROUTE.AUTH + global.ROUTE.LOGIN);
 	}
   
 	try {
@@ -24,7 +24,7 @@ function checkAuthCookie(req, res, next) {
         next(); 
 	} catch (error) {
         // Redireciona para a tela de login se o cookie for inválido
-	    res.redirect(global.ROUTE.AUTH + global.ROUTE.SIGN_IN);
+	    res.redirect(global.ROUTE.AUTH + global.ROUTE.LOGIN);
 	}
 }
 

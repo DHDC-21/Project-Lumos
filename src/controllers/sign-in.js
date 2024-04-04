@@ -8,8 +8,8 @@ const Usuario = require('../models/Usuario');
 
 
 function telaDeLogin(req,res){
-    res.render(global.VIEW.SIGN_IN,{
-        title: global.ROUTE_TITLE.SIGN_IN,
+    res.render(global.VIEW.LOGIN,{
+        title: global.TITLE.LOGIN,
         msg: '',
         global,
     });
@@ -32,8 +32,8 @@ async function autenticarLogin(req,res){
         });
 
         if(!usuario){
-            res.render(global.VIEW.SIGN_IN,{
-                title: global.ROUTE_TITLE.SIGN_IN,
+            res.render(global.VIEW.LOGIN,{
+                title: global.TITLE.LOGIN,
                 msg: 'Usuário e/ou senha incorretos!' + ' dev: usuário errado',
                 global,
             });
@@ -44,8 +44,8 @@ async function autenticarLogin(req,res){
         const checkPassword = await bcrypt.compare(inputSenha, usuario.senha);
 
         if(!checkPassword){
-            res.render(global.VIEW.SIGN_IN,{
-                title: global.ROUTE_TITLE.SIGN_IN,
+            res.render(global.VIEW.LOGIN,{
+                title: global.TITLE.LOGIN,
                 msg: 'Usuário e/ou senha incorretos!' + ' dev: senha errada',
                 global,
             });
@@ -63,8 +63,8 @@ async function autenticarLogin(req,res){
         res.redirect(global.ROUTE.HOME);
 
     } catch (error) {
-        res.render(global.VIEW.SIGN_IN,{
-            title: global.ROUTE_TITLE.SIGN_IN,
+        res.render(global.VIEW.LOGIN,{
+            title: global.TITLE.LOGIN,
             msg: 'Erro de autenticação!',
             global,
         });
@@ -76,7 +76,7 @@ async function autenticarLogin(req,res){
 
 function removerCookie(req,res){
     res.clearCookie(global.COOKIE_NAME);
-    res.redirect(global.ROUTE.SIGN_IN);
+    res.redirect(global.ROUTE.LOGIN);
 }
 
 
