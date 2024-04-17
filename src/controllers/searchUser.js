@@ -12,18 +12,6 @@ module. exports = async function buscarUsuarios(req, res) {
   try {
     const userId = req.userId;
     
-    // Buscar os IDs dos amigos do usuário atual
-    const amigos = await Amizade.findAll({
-      where:{
-        UsuarioId: userId,
-        status: 'aceita'
-      }
-    });
-
-    // Armazena os IDs dos amigos em uma lista
-    const amigosId = amigos.map(amigo=> amigo.amigoId);
-
-    // Buscar usuários cuja o nome ou o sobrenome contenham o inputBusca
     const inputBusca = req.body.inputBusca;
 
     const usuarios = await Usuario.findAll({
@@ -40,7 +28,9 @@ module. exports = async function buscarUsuarios(req, res) {
             },
           },
         ],
-        id:{[Op.notIn]:amigosId},
+        id:{
+          [Op.ne]: userId
+        },
       },
       attributes: ["id", "nome", "sobrenome", "foto"],
     });

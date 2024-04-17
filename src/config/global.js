@@ -2,7 +2,7 @@
 const GLOBAL = {
     ROUTE:{
         // Rotas abertas
-        EULA:           '/eula',
+        EULA:               '/eula',
         
         // Rotas de autenticação
         AUTH:               '/auth',
@@ -53,7 +53,7 @@ const GLOBAL = {
 
     },
 
-    COOKIE_NAME:    'projeto-lumos'
+    COOKIE_NAME:            'projeto-lumos',
 }
 
 module.exports =  GLOBAL;
